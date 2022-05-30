@@ -22,6 +22,6 @@ function addBookToLibrary(){
     let author = document.getElementById('author').value
     let page = document.getElementById('page').value
     let read = document.querySelector('input[name="read"]:checked').value
-    myLibrary.push(title, author, page, read)
+    myLibrary.splice(0, 4, title, author, page, read)
     return myLibrary.join(' ')
 }
