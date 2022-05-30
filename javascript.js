@@ -6,16 +6,19 @@ function Book(title, author, page) {
     this.page = page
 }
 
-function addBookToLibrary() {
-    myLibrary.push(hobbit)
-    myLibrary.push(phantom)
-    myLibrary.push(davinci)
-    console.log(myLibrary)
+let btn = document.getElementById('add')
+    btn.addEventListener('click', buttonClick);
+
+function buttonClick(){
+    let title = document.getElementById('title').value
+    let author = document.getElementById('author').value
+    let page = document.getElementById('page').value
+    let read = document.querySelector('input[name="read"]:checked').value
+    console.log(title, author, page, read)
 }
 
-const hobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295')
-const phantom = new Book('The Phantom of the Opera', 'Gaston Leroux', '269')
-const davinci = new Book('The Da Vinci Code', 'Dan Brown', '454')
-
+function addBookToLibrary() {
+    myLibrary.push()
+}
 
 addBookToLibrary()
