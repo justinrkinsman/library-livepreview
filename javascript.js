@@ -1,27 +1,34 @@
 let myLibrary = [];
 
-function Book(title, author, page) {
-    this.title = title,
-    this.author = author,
-    this.page = page
+function Book() {
+    this.title = document.getElementById('title').value,
+    this.author = document.getElementById('author').value
+    this.page = document.getElementById('page').value
+    this.read = document.querySelector('input[name="read"]:checked').value
+    this.info = `${this.title} by ${this.author}, ${this.page} pages. have you read this book? ${this.read}`
 }
 
 let btn = document.getElementById('add')
-    btn.addEventListener('click', buttonClick);
+    btn.addEventListener('click', addBookToLibrary);
 
-function buttonClick(){
+function addBookToLibrary(){
+    newBook = new Book
     const para = document.createElement('p');
-    const node = document.createTextNode(addBookToLibrary())
+    const node = document.createTextNode(newBook.info)
     para.appendChild(node)
     const element = document.getElementById('card')
     element.appendChild(para)
+    console.log(newBook.info)
 }
-
+/*
 function addBookToLibrary(){
-    let title = document.getElementById('title').value
-    let author = document.getElementById('author').value
-    let page = document.getElementById('page').value
-    let read = document.querySelector('input[name="read"]:checked').value
+    let titleForm = document.getElementById('title').value
+    let authorForm = document.getElementById('author').value
+    let pageForm = document.getElementById('page').value
+    let bookForm = new Book(titleForm, authorForm, pageForm)
+    console.log(bookForm)
+    
+    /*
     myLibrary.splice(0, 4, title, author, page, read)
-    return myLibrary.join(' ')
-}
+    return myLibrary.join(' ')*/
+//}
