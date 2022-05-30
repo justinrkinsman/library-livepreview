@@ -1,8 +1,8 @@
 .form {
-    display: flex;
-    flex-direction: column;
     padding: 10px;
     background-color: aqua;
+    width: 20vw;
+    height: 100vh
 }
 
 .label {
@@ -15,4 +15,12 @@ body {
 
 #yes, #no {
     margin: 5px;
+}
+
+#add {
+    margin-top: 10px;
+}
+
+.read {
+    margin-bottom: 0px;
 }
