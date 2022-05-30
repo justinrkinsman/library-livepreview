@@ -9,8 +9,13 @@ function Book(title, author, page) {
     }
 }
 
+/*const bookDiv = document.querySelector("book").textContent
+console.log(bookDiv)*/
+
 function addBookToLibrary() {
-    //do stuff here
+    myLibrary.push(hobbit)
+    myLibrary.push(phantom)
+    myLibrary.push(davinci)
 }
 
 const hobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295')
@@ -20,3 +25,5 @@ const davinci = new Book('The Da Vinci Code', 'Dan Brown', '454')
 hobbit.info()
 phantom.info()
 davinci.info()
+
+addBookToLibrary()
