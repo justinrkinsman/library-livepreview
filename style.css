@@ -1,4 +1,18 @@
-input {
+.form {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    padding: 10px;
+    background-color: aqua;
+}
+
+.label {
+    margin-top: 10px;
+}
+
+body {
+    margin: 0px;
+}
+
+#yes, #no {
+    margin: 5px;
 }

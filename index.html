@@ -6,20 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <script src="javascript.js" defer></script>
+    <link rel='stylesheet' href="style.css">
 </head>
 <body>
     <form class="form">
-        <div>
+        <div class="label">
             <label for="title">Title: </label>
+        </div>
+        <div class="input">
             <input type="text" id="title" name="title" placeholder="The Hobbit">
         </div>
-        <div>
+        <div class="label">
             <label for="author">Author: </label>
+        </div>
+        <div class="input">
             <input type="text" id="author" name="author" placeholder="J.R.R. Tolkien">
         </div>
-        <div>
+        <div class="label">
             <label for="page">Pages: </label>
+        </div>
+        <div class="input">    
             <input type="text" id="page" name="page" placeholder="295">
+        </div>
+        <div>
+            <p>Read?</p>
+            <label for="yes">Yes</label>
+            <input type="radio" id="yes" name="read" value="Yes">
+            <label for="no">No</label>
+            <input type="radio" id="no" name="read" value="No">
         </div>
     </form>
 </body>
