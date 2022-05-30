@@ -21,12 +21,13 @@ function addBookToLibrary(){
     change.innerText = 'Change Read Status'
     para.appendChild(node)
     const element = document.getElementById('table')
+    element.style.display = 'grid'
     const card = document.createElement('div')
     element.appendChild(card)
     card.appendChild(para)
     card.appendChild(del)
     card.appendChild(change)
-    card.setAttribute('style', 'background-color: salmon; color: white;')
+    card.setAttribute('style', 'background-color: #000080; color: white;')
     console.log(newBook.info)
 }
 
