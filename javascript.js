@@ -10,6 +10,22 @@ function Book() {
 let btn = document.getElementById('add')
     btn.addEventListener('click', addRow);
 
+document.addEventListener('click', function(e){
+    if(e.target && e.target.id== 'delBtn'){
+        console.log('Delete')
+    }
+})
+
+document.addEventListener('click', function(e){ 
+    if(e.target && e.target.id== 'readBtn'){
+        console.log('Change Read Status')
+    }
+})
+
+function deleteRow(){
+    console.log('Hello')
+}
+
 function addBookToLibrary(){
     newBook = new Book
     myLibrary.push(newBook)
@@ -56,7 +72,6 @@ function clearScreen() {
 
 
 /*function createTable() {
-    clearScreen()
     addBookToLibrary()
     myLibrary.forEach(function(number) {
         const para = document.createElement('p');

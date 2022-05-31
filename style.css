@@ -33,9 +33,6 @@ table, th, td {
     height: 20px
 }
 
-th, td {
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -43,9 +40,4 @@ table {
 
 body {
     background-color: salmon;
-}
-
-.btn {
-    justify-items: center;
-    align-items: center;
 }
