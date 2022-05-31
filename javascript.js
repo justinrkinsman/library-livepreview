@@ -37,8 +37,14 @@ function addRow() {
     cell2.innerText = `${newBook.author}`
     cell3.innerText = `${newBook.page}`
     cell4.innerText = `${newBook.read}`
-    cell5.innerText = 'Delete'
-    cell6.innerText = 'Change Read Status'
+    const del = document.createElement("button")
+    del.innerText = 'Delete'
+    del.setAttribute('id', 'delBtn')
+    cell5.appendChild(del)
+    const change = document.createElement('button')
+    change.innerText = 'Change Read Status'
+    change.setAttribute('id', 'readBtn')
+    cell6.appendChild(change)
 }
 
 function clearScreen() {
@@ -48,18 +54,13 @@ function clearScreen() {
     }
 }
 
-function createTable() {
+
+/*function createTable() {
     clearScreen()
     addBookToLibrary()
     myLibrary.forEach(function(number) {
         const para = document.createElement('p');
         const title = document.createTextNode(myLibrary[title])
-        const del = document.createElement("button")
-        del.innerText = 'Delete'
-        del.setAttribute('id', 'delBtn')
-        const change = document.createElement('button')
-        change.innerText = 'Change Read Status'
-        change.setAttribute('id', 'readStatus')
         para.appendChild(title)
         const element = document.getElementById('table')
         element.style.display = 'grid'
@@ -75,9 +76,6 @@ function createTable() {
 
 /*let delBtn = document.getElementById('delBtn')
 delBtn.addEventListener('click', removeCard())
-
-
-
 
 
 /*
