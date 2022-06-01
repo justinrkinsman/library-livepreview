@@ -12,7 +12,10 @@ let btn = document.getElementById('add')
 
 document.addEventListener('click', function(e){
     if(e.target && e.target.id== 'delBtn'){
-        console.log('Delete')
+        let rows = document.querySelectorAll('tr')
+        rows.forEach((row) => {
+            console.log(row.rowIndex)
+        })
     }
 })
 
@@ -21,10 +24,6 @@ document.addEventListener('click', function(e){
         console.log('Change Read Status')
     }
 })
-
-function deleteRow(){
-    console.log('Hello')
-}
 
 function addBookToLibrary(){
     newBook = new Book
@@ -49,10 +48,12 @@ function addRow() {
     let cell4 = row.insertCell(3)
     let cell5 = row.insertCell(4)
     let cell6 = row.insertCell(5)
-    cell1.innerText = `${newBook.title}`;
-    cell2.innerText = `${newBook.author}`
-    cell3.innerText = `${newBook.page}`
-    cell4.innerText = `${newBook.read}`
+    for (let i = 0; i < myLibrary.length; i++) {
+    cell1.innerText = `${myLibrary[i].title}`;
+    cell2.innerText = `${myLibrary[i].author}`
+    cell3.innerText = `${myLibrary[i].page}`
+    cell4.innerText = `${myLibrary[i].read}`
+    }
     const del = document.createElement("button")
     del.innerText = 'Delete'
     del.setAttribute('id', 'delBtn')
