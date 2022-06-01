@@ -13,7 +13,10 @@ let btn = document.getElementById('add')
 document.addEventListener('click', function(e){
   //  addBookToLibrary()
     if(e.target && e.target.id== 'delBtn'){
+        let attr = e.target.parentNode
+        let attr2 = attr.parentNode.getAttribute('index')
         deleteRow()
+        console.log(attr2)
         }
 //            console.log(row.rowIndex)
         
@@ -47,14 +50,9 @@ function clearForm() {
 }
 
 function deleteRow(){
-    addBookToLibrary
-    let table = document.getElementById('table')
-    let row = table.insertRow(-1)
-    let rowIndex = row.setAttribute('index', '0')
-    for(let i = 0; i < myLibrary.length; i++){
-      //  rowIndex = `${i}`
-        console.log(rowIndex)
-}}
+    
+    console.log('Hello')
+}
 
 function addRow() {
     addBookToLibrary()
@@ -69,10 +67,10 @@ function addRow() {
     let cell6 = row.insertCell(5)
     let rowIndex = row.setAttribute("index", '0')
     for (let i = 0; i < myLibrary.length; i++) {
-    cell1.innerText = `${myLibrary[i].title}`;
-    cell2.innerText = `${myLibrary[i].author}`
-    cell3.innerText = `${myLibrary[i].page}`
-    cell4.innerText = `${myLibrary[i].read}`
+    cell1.innerText = myLibrary[i].title;
+    cell2.innerText = myLibrary[i].author
+    cell3.innerText = myLibrary[i].page
+    cell4.innerText = myLibrary[i].read
     rowIndex = row.setAttribute('index', `${i}`)
     }
     const del = document.createElement("button")
@@ -83,7 +81,6 @@ function addRow() {
     change.innerText = 'Change Read Status'
     change.setAttribute('id', 'readBtn')
     cell6.appendChild(change)
-    console.log(rowIndex)
 }
 
 function clearScreen() {
