@@ -14,9 +14,9 @@ document.addEventListener('click', function(e){
   //  addBookToLibrary()
     if(e.target && e.target.id== 'delBtn'){
         let attr = e.target.parentNode
-        let attr2 = attr.parentNode.getAttribute('index')
-        deleteRow()
-        console.log(attr2)
+        let attr2 = attr.parentNode.rowIndex
+        let table = document.querySelector("tbody")
+        table.deleteRow(attr2)
         }
 //            console.log(row.rowIndex)
         
@@ -50,8 +50,8 @@ function clearForm() {
 }
 
 function deleteRow(){
-    
-    console.log('Hello')
+    let table = document.querySelector('tbody')
+    table.deleteRow()
 }
 
 function addRow() {
