@@ -7,33 +7,33 @@ function Book() {
     this.read = document.querySelector('input[name="read"]:checked').value
 }
 
+let readStatus = {
+    __proto__: Book
+}
+
+/*
+Book.prototype.readStatus = function() {
+    document.querySelector('input[name="read"]:checked').value
+}*/
+
 let btn = document.getElementById('add')
     btn.addEventListener('click', addRow);
 
 document.addEventListener('click', function(e){
-  //  addBookToLibrary()
     if(e.target && e.target.id== 'delBtn'){
         let attr = e.target.parentNode
         let attr2 = attr.parentNode.rowIndex
         let table = document.querySelector("tbody")
         table.deleteRow(attr2)
         }
-//            console.log(row.rowIndex)
-        
     }
 )
 
-/*const array = [2, 5, 9]
-        console.log(array)
-        const index = array.indexOf(5)
-if (index > -1) {
-    array.splice(index, 1)
-}
-console.log(array)*/
-
 document.addEventListener('click', function(e){ 
     if(e.target && e.target.id== 'readBtn'){
-        console.log('Change Read Status')
+        let readTest = new Book
+        let readStatus = readTest.read
+        console.log(readStatus)
     }
 })
 
@@ -83,13 +83,14 @@ function addRow() {
     cell6.appendChild(change)
 }
 
+
+/*
 function clearScreen() {
     let element = document.getElementById('table') 
     while (element.firstChild) {
         element.removeChild(element.firstChild)
     }
-}
-
+}/*
 
 /*function createTable() {
     addBookToLibrary()
