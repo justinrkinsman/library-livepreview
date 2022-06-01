@@ -11,13 +11,22 @@ let btn = document.getElementById('add')
     btn.addEventListener('click', addRow);
 
 document.addEventListener('click', function(e){
+  //  addBookToLibrary()
     if(e.target && e.target.id== 'delBtn'){
-        let rows = document.querySelectorAll('tr')
-        rows.forEach((row) => {
-            console.log(row.rowIndex)
-        })
+        deleteRow()
+        }
+//            console.log(row.rowIndex)
+        
     }
-})
+)
+
+/*const array = [2, 5, 9]
+        console.log(array)
+        const index = array.indexOf(5)
+if (index > -1) {
+    array.splice(index, 1)
+}
+console.log(array)*/
 
 document.addEventListener('click', function(e){ 
     if(e.target && e.target.id== 'readBtn'){
@@ -37,6 +46,16 @@ function clearForm() {
     document.getElementById('page').value = ''
 }
 
+function deleteRow(){
+    addBookToLibrary
+    let table = document.getElementById('table')
+    let row = table.insertRow(-1)
+    let rowIndex = row.setAttribute('index', '0')
+    for(let i = 0; i < myLibrary.length; i++){
+      //  rowIndex = `${i}`
+        console.log(rowIndex)
+}}
+
 function addRow() {
     addBookToLibrary()
     clearForm()
@@ -48,11 +67,13 @@ function addRow() {
     let cell4 = row.insertCell(3)
     let cell5 = row.insertCell(4)
     let cell6 = row.insertCell(5)
+    let rowIndex = row.setAttribute("index", '0')
     for (let i = 0; i < myLibrary.length; i++) {
     cell1.innerText = `${myLibrary[i].title}`;
     cell2.innerText = `${myLibrary[i].author}`
     cell3.innerText = `${myLibrary[i].page}`
     cell4.innerText = `${myLibrary[i].read}`
+    rowIndex = row.setAttribute('index', `${i}`)
     }
     const del = document.createElement("button")
     del.innerText = 'Delete'
@@ -62,6 +83,7 @@ function addRow() {
     change.innerText = 'Change Read Status'
     change.setAttribute('id', 'readBtn')
     cell6.appendChild(change)
+    console.log(rowIndex)
 }
 
 function clearScreen() {
