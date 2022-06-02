@@ -21,7 +21,7 @@ Book.prototype.protoReadStatus = function(){
   //  choice = document.querySelector('input[name="read"]:checked').value
     let realReadStatus = document.getElementById('readStatus')
    // if (choice == 'Yes') {
-        console.log(realReadStatus.textContent)
+      //  console.log(realReadStatus.textContent)
   //  }else if (choice == 'No') {
   //      console.log('Yes')
   //  }
@@ -45,13 +45,15 @@ document.addEventListener('click', function(e){
         let attr = e.target.parentNode
         let attr2 = attr.parentNode.rowIndex
         let newReadStatus = myLibrary[attr2-1].read
-        myLibrary[attr2-1].protoReadStatus()
-        let realReadStatus = document.getElementById('readStatus')
+       // myLibrary[attr2-1].protoReadStatus()
+        let realReadStatus = document.getElementById(`readStatus${attr2-1}`)
         if (realReadStatus.textContent == 'Yes') {
             realReadStatus.textContent = 'No'
         }else if (realReadStatus.textContent == 'No') {
             realReadStatus.textContent = 'Yes'
         }
+        console.log(realReadStatus)
+        console.log(myLibrary[attr2-1])
         }
     }
 )
@@ -90,8 +92,8 @@ function addRow() {
     cell2.innerText = myLibrary[i].author
     cell3.innerText = myLibrary[i].page
     cell4.innerText = myLibrary[i].read
-    cell4.setAttribute('id', 'readStatus')
-    row.setAttribute('id', 'rowID')
+    cell4.setAttribute('id', `readStatus${i}`)
+    row.setAttribute('id', `rowID${i}`)
     rowIndex = row.setAttribute('index', `${i}`)
     }
     const del = document.createElement("button")
