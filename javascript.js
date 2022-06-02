@@ -17,15 +17,15 @@ function changeReadStatus(choice){
     }
 //}
 
-/*
-Book.prototype.changeReadStatus = function(choice){
-    choice = document.querySelector('input[name="read"]:checked').value
-    if (choice == 'Yes') {
-        console.log('No')
-    }else if (choice == 'No') {
-        console.log('Yes')
-    }
-}*/
+Book.prototype.protoReadStatus = function(){
+  //  choice = document.querySelector('input[name="read"]:checked').value
+    let realReadStatus = document.getElementById('readStatus')
+   // if (choice == 'Yes') {
+        console.log(realReadStatus.textContent)
+  //  }else if (choice == 'No') {
+  //      console.log('Yes')
+  //  }
+}
 
 let btn = document.getElementById('add')
     btn.addEventListener('click', addRow);
@@ -45,11 +45,12 @@ document.addEventListener('click', function(e){
         let attr = e.target.parentNode
         let attr2 = attr.parentNode.rowIndex
         let newReadStatus = myLibrary[attr2-1].read
-        //myLibrary[attr2-1].changeReadStatus()
-        if (newReadStatus == 'Yes') {
-            changeReadStatus('Yes')
-        }else if (newReadStatus == 'No'){
-            changeReadStatus('No')
+        myLibrary[attr2-1].protoReadStatus()
+        let realReadStatus = document.getElementById('readStatus')
+        if (realReadStatus.textContent == 'Yes') {
+            realReadStatus.textContent = 'No'
+        }else if (realReadStatus.textContent == 'No') {
+            realReadStatus.textContent = 'Yes'
         }
         }
     }
@@ -89,6 +90,8 @@ function addRow() {
     cell2.innerText = myLibrary[i].author
     cell3.innerText = myLibrary[i].page
     cell4.innerText = myLibrary[i].read
+    cell4.setAttribute('id', 'readStatus')
+    row.setAttribute('id', 'rowID')
     rowIndex = row.setAttribute('index', `${i}`)
     }
     const del = document.createElement("button")
