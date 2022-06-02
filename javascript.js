@@ -7,13 +7,24 @@ function Book() {
     this.read = document.querySelector('input[name="read"]:checked').value
 }
 
-let readStatus = {
-    __proto__: Book
-}
+function changeReadStatus(choice){
+    //Book.prototype.chgReadStatus = function(){
+        if (choice == 'Yes'){
+            console.log('No')
+        }else if (choice == 'No'){
+            console.log('Yes')
+        }
+    }
+//}
 
 /*
-Book.prototype.readStatus = function() {
-    document.querySelector('input[name="read"]:checked').value
+Book.prototype.changeReadStatus = function(choice){
+    choice = document.querySelector('input[name="read"]:checked').value
+    if (choice == 'Yes') {
+        console.log('No')
+    }else if (choice == 'No') {
+        console.log('Yes')
+    }
 }*/
 
 let btn = document.getElementById('add')
@@ -31,11 +42,18 @@ document.addEventListener('click', function(e){
 
 document.addEventListener('click', function(e){ 
     if(e.target && e.target.id== 'readBtn'){
-        let readTest = new Book
-        let readStatus = readTest.read
-        console.log(readStatus)
+        let attr = e.target.parentNode
+        let attr2 = attr.parentNode.rowIndex
+        let newReadStatus = myLibrary[attr2-1].read
+        //myLibrary[attr2-1].changeReadStatus()
+        if (newReadStatus == 'Yes') {
+            changeReadStatus('Yes')
+        }else if (newReadStatus == 'No'){
+            changeReadStatus('No')
+        }
+        }
     }
-})
+)
 
 function addBookToLibrary(){
     newBook = new Book
