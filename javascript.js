@@ -1,10 +1,12 @@
 let myLibrary = [];
 
-function Book() {
+class Book {
+    constructor(title, author, page, read) {
     this.title = document.getElementById('title').value
     this.author = document.getElementById('author').value
     this.page = document.getElementById('page').value
     this.read = document.querySelector('input[name="read"]:checked').value
+}
 }
 
 function changeReadStatus(choice){
@@ -28,10 +30,15 @@ Book.prototype.protoReadStatus = function(){
 }
 
 let btn = document.getElementById('add')
-    btn.addEventListener('click', addRow);
+let inputDivs = document.getElementsByTagName('input')
+if (inputDivs.classList === 'invalid'){
+    console.log('loser')
+}
+
+btn.addEventListener('click', addRow);
 
 document.addEventListener('click', function(e){
-    if(e.target && e.target.id== 'delBtn'){
+    if(e.target && e.target.id == 'delBtn'){
         let attr = e.target.parentNode
         let attr2 = attr.parentNode.rowIndex
         let table = document.querySelector("tbody")
@@ -43,17 +50,15 @@ document.addEventListener('click', function(e){
 document.addEventListener('click', function(e){ 
     if(e.target && e.target.id== 'readBtn'){
         let attr = e.target.parentNode
-        let attr2 = attr.parentNode.rowIndex
-        let newReadStatus = myLibrary[attr2-1].read
+        let attr2 = attr.parentNode.id.slice(-1)
+        //let newReadStatus = myLibrary[attr2-1].read
        // myLibrary[attr2-1].protoReadStatus()
-        let realReadStatus = document.getElementById(`readStatus${attr2-1}`)
+        let realReadStatus = document.getElementById(`readStatus${attr2}`)
         if (realReadStatus.textContent == 'Yes') {
             realReadStatus.textContent = 'No'
         }else if (realReadStatus.textContent == 'No') {
             realReadStatus.textContent = 'Yes'
         }
-        console.log(realReadStatus)
-        console.log(myLibrary[attr2-1])
         }
     }
 )

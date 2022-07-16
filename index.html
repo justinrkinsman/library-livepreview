@@ -14,24 +14,24 @@
             <label for="title">Title: </label>
         </div>
         <div class="input">
-            <input type="text" id="title" name="title" placeholder="The Hobbit">
+            <input type="text" id="title" name="title" placeholder="The Hobbit" required minlength="1">
         </div>
         <div class="label">
             <label for="author">Author: </label>
         </div>
         <div class="input">
-            <input type="text" id="author" name="author" placeholder="J.R.R. Tolkien">
+            <input type="text" id="author" name="author" placeholder="J.R.R. Tolkien" required minlength="1">
         </div>
         <div class="label">
             <label for="page">Pages: </label>
         </div>
         <div class="input">    
-            <input type="text" id="page" name="page" placeholder="295">
+            <input type="text" id="page" name="page" placeholder="295" required minlength="1">
         </div>
         <div>
             <p class="read">Read?</p>
             <label for="yes">Yes</label>
-            <input type="radio" id="yes" name="read" value="Yes">
+            <input type="radio" id="yes" name="read" value="Yes" required>
             <label for="no">No</label>
             <input type="radio" id="no" name="read" value="No">
         </div>
@@ -43,8 +43,8 @@
             <th>Author</th>
             <th>Page Count</th>
             <th>Read?</th>
-            <th></th>
-            <th></th>
+            <th>Delete</th>
+            <th>Change Read Status</th>
         </tr>
     </table>
 </body>
