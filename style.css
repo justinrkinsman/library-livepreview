@@ -41,3 +41,8 @@ table {
 body {
     background-color: salmon;
 }
+
+input:invalid {
+    background-color: red;
+    
+}
