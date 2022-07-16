@@ -51,7 +51,7 @@ document.addEventListener('click', function(e){
     if(e.target && e.target.id== 'readBtn'){
         let attr = e.target.parentNode
         let attr2 = attr.parentNode.rowIndex
-        let newReadStatus = myLibrary[attr2-1].read
+        //let newReadStatus = myLibrary[attr2-1].read
         console.log(attr2)
        // myLibrary[attr2-1].protoReadStatus()
         let realReadStatus = document.getElementById(`readStatus${attr2}`)
