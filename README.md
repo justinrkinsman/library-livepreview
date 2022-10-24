@@ -1,2 +1,2 @@
 Live preview
-https://justinrkinsman.github.io/library/
+https://justinrkinsman.github.io/library-livepreview/
